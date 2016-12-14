@@ -33,7 +33,7 @@
          */
 
         if ( is_singular() ) {
-            the_contet();
+            the_content();
         } else {
             the_excerpt();
         }

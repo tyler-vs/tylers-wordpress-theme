@@ -1,9 +1,10 @@
 <?php
 /**
- * index.php
+ * single.php
  *
- * the default template file used by wordpress if no other files exist.
- *
+ * The single post template is used when a visitor requests a single post.
+ * For this, and all other query templates, index.php is used if the
+ * query template is not present. - WP Codex
  */
  ?>
 <?php get_header(); ?>
