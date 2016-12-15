@@ -20,12 +20,6 @@
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
 
@@ -48,9 +42,12 @@
           </div>
         </div>
 
+        <div class="jumbotron">
+            <div class="container">
+                <div class="blog-header">
+                    <h1 class="blog-title"><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('title'); ?>"><?php bloginfo('title'); ?></a></h1>
+                    <p class="lead blog-description"><?php bloginfo('description'); ?></p>
+                </div>
+            </div>
+        </div>
         <div class="container">
-
-          <div class="blog-header">
-            <h1 class="blog-title"><?php bloginfo('title'); ?></h1>
-            <p class="lead blog-description"><?php bloginfo('description'); ?></p>
-          </div>
