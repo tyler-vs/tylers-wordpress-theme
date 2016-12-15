@@ -139,7 +139,7 @@ if ( ! function_exists( 'tvs_widgets_init' ) ) {
             'class'         => 'primary-sidebar',
             'before_widget' => '<div id="%1" class="sidebar-module %2">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h4 class="sidebar-module-title">',
+            'before_title'  => '<h4>',
             'after_title'   => '</h4>'
         );
 
