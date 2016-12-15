@@ -11,19 +11,17 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title><?php bloginfo('title') ?></title>
-        <meta name="description" content="<?php bloginfo('description'); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title><?php bloginfo('title'); ?></title>
+        <meta name="description" content="<?php bloginfo('description'); ?>">
+
+
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
-
-        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
@@ -32,20 +30,47 @@
         <![endif]-->
         <div class="blog-masthead">
           <div class="container">
-            <nav class="blog-nav">
-              <a class="blog-nav-item active" href="#">Home</a>
-              <a class="blog-nav-item" href="#">New features</a>
-              <a class="blog-nav-item" href="#">Press</a>
-              <a class="blog-nav-item" href="#">New hires</a>
-              <a class="blog-nav-item" href="#">About</a>
-            </nav>
+            <?php
+               /**
+                * Displays a navigation menu
+                * @param array $args Arguments
+                */
+                $tvs_header_nav_menu_args = array(
+                    'theme_location' => 'header-menu',
+                    'menu' => '',
+                    'container' => 'nav',
+                    'container_class' => 'site-nav',
+                    'container_id' => '',
+                    // menu represents the ul element
+                    'menu_class' => 'nav nav-pills',
+                    // this will output a default that uses the name
+                    // of the registered menu, which could be useful
+                    // or more likely unnecessary.
+                    'menu_id' => '',
+                    'echo' => true,
+                    'fallback_cb' => 'wp_page_menu',
+                    'before' => null,
+                    'after' => null,
+                    'link_before' => '',
+                    'link_after' => '',
+                    'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
+                    // 'items_wrap' => '%3$s',
+                    'depth' => 0,
+                    'walker' => ''
+                );
+
+                wp_nav_menu( $tvs_header_nav_menu_args );
+
+             ?>
           </div>
         </div>
 
         <div class="jumbotron">
             <div class="container">
                 <div class="blog-header">
-                    <h1 class="blog-title"><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('title'); ?>"><?php bloginfo('title'); ?></a></h1>
+                    <h1 class="blog-title">
+                        <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('title'); ?>"><?php bloginfo('title'); ?></a>
+                    </h1>
                     <p class="lead blog-description"><?php bloginfo('description'); ?></p>
                 </div>
             </div>

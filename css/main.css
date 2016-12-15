@@ -5,13 +5,46 @@
    ========================================================================== */
 
 
+/**
+ * Table of Content:
+ *
+ * - blog masthead
+ * - site navigation
+ * -
+ *
+ */
 
 
+/**
+ * blog masthead
+ */
+
+.blog-masthead {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    /*override to remove box shadow*/
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 
 
+/**
+ * Site Navigation
+ */
 
-
-
+/*nav*/
+.site-nav {
+}
+/*nav > ul*/
+.site-nav > .nav.nav-pills {
+}
+/*nav > ul > li */
+.site-nav > .nav.nav-pills > li {
+}
+/* increase specificity to target anchor elements */
+.site-nav > .nav.nav-pills > li > a {
+    border-radius: 0;
+}
 
 
 
