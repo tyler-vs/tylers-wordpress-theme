@@ -47,8 +47,14 @@
 }
 
 
+/**
+ * Post Navigation Pagers
+ */
 
-
+/* increase width to fit in text */
+.pager>li>a {
+    width: 150px;
+}
 
 
 

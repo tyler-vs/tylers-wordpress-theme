@@ -62,15 +62,16 @@
                 wp_nav_menu( $tvs_header_nav_menu_args );
 
              ?>
-          </div>
-        </div>
+          </div> <!-- /.container -->
+        </div> <!-- /.blog-masthead -->
         <div class="jumbotron">
             <div class="container">
                 <div class="blog-header">
+                    <?php echo apply_filters( 'tvs_jumbotron_content', '
                     <h1 class="blog-title">
-                        <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('title'); ?>"><?php bloginfo('title'); ?></a>
+                        <a href="' . get_bloginfo('url') .'" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a>
                     </h1>
-                    <p class="lead blog-description"><?php bloginfo('description'); ?></p>
+                    <p class="lead blog-description">' . get_bloginfo('description') . '</p>' ); ?>
                 </div>
             </div>
         </div>

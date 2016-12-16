@@ -27,9 +27,9 @@ if (have_posts() ) {
 }
  ?>
 
-<!-- <nav>
+<nav>
     <ul class="pager">
-        <li><a href="#">Previous</a></li>
-        <li><a href="#">Next</a></li>
+        <li><?php next_posts_link( 'Older posts' ); ?></li>
+        <li><?php previous_posts_link( 'Newer posts' ); ?></li>
     </ul>
-</nav> -->
+</nav>
