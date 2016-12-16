@@ -6,7 +6,6 @@
  * have a tempalte file to house the loop(s) used on a wordpress site
  * to make it easier to modify the loop instead of going through each
  * template file and doing so.
- *
  */
 
 if (have_posts() ) {
@@ -28,9 +27,9 @@ if (have_posts() ) {
 }
  ?>
 
-<nav>
+<!-- <nav>
     <ul class="pager">
         <li><a href="#">Previous</a></li>
         <li><a href="#">Next</a></li>
     </ul>
-</nav>
+</nav> -->

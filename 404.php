@@ -1,9 +1,9 @@
 <?php
 /**
- * page.php
+ * 404.php
  *
- * The page template is used when visitors request individual pages, which are
- * a built-in template.
+ * The 404 template is used when WordPress cannot find a post, page, or other
+ * content that matches the visitor’s request.
  */
  ?>
 <?php get_header(); ?>
@@ -12,10 +12,8 @@
 
             <div class="col-sm-8 blog-main">
 
-                <?php
-                  // get the default loop
-                  get_template_part( 'loop' );
-                 ?>
+                <h2>Page Not Found</h2>
+                <p>Sorry, but the page you were trying to view does not exist.</p>
 
             </div><!-- /.blog-main -->
 

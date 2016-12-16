@@ -7,41 +7,14 @@
  */
  ?>
 
-<div class="blog-post">
+<div <?php post_class( 'blog-post' ); ?> id="post-<?php the_ID(); ?>">
     <header class="blog-post-header">
         <h2 class="blog-post-title">
-            <?php
-            /**
-             * if :on either the blog home page or a define static front
-             * page then add a link to the article/blog post.
-             * else:
-             * just display the title of the blog post without the anchor tag.*/
-
-            if ( is_front_page() || is_home() ) { ?>
-                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-            <?php } else { ?>
-                <?php the_title(); ?>
-            <?php } ?>
+            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
         </h2> <!-- /.blog-post-title -->
-        <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+        <p class="blog-post-meta"><?php the_date(); ?> by <?php the_author_link(); ?></p>
     </header>
     <div class="blog-post-content">
-        <?php
-        /**
-         * determine whether to output the post content as
-         * the full content or an excerpt
-         */
-
-        if ( is_singular() ) {
-            the_content();
-        } else {
-            the_excerpt();
-        }
-        ?>
-
-    </div>
-    <hr>
-    <footer class="blog-post-footer">
-        <!-- meta goes here -->
-    </footer>
-  </div><!-- /.blog-post -->
+        <?php the_excerpt(); ?>
+    </div> <!-- /.blog-post-content -->
+</div><!-- /.blog-post -->

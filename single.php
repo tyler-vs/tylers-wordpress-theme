@@ -4,7 +4,7 @@
  *
  * The single post template is used when a visitor requests a single post.
  * For this, and all other query templates, index.php is used if the
- * query template is not present. - WP Codex
+ * query template is not present.
  */
  ?>
 <?php get_header(); ?>
