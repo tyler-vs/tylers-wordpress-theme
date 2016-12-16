@@ -9,6 +9,7 @@
  * Widgets Admin Panel.
  */
  ?>
+<?php do_action( 'tvs_before_sidebar' ); ?>
 <aside class="col-sm-3 col-sm-offset-1 blog-sidebar">
     <?php
     /**
@@ -47,3 +48,4 @@
         dynamic_sidebar( 'primary' );
     } ?>
 </aside><!-- /.blog-sidebar -->
+<?php do_action( 'tvs_after_sidebar' ); ?>

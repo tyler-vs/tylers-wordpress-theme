@@ -25,6 +25,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <?php do_action( 'tvs_before_header' ); ?>
         <div class="blog-masthead">
           <div class="container">
             <?php
@@ -73,4 +74,5 @@
                 </div>
             </div>
         </div>
+        <?php do_action( 'tvs_after_header' ); ?>
         <div class="container">

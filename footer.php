@@ -6,6 +6,7 @@
  * copyright notices, sitemap.
  */
  ?>
+        <?php do_action( 'tvs_before_footer' ); ?>
         <footer class="blog-footer">
           <div class="container">
               <div class="row">
@@ -18,7 +19,7 @@
               </div>
           </div>
         </footer> <!-- /footer -->
-
+        <?php do_action( 'tvs_after_footer' ); ?>
 
         <?php wp_footer(); ?>
     </body>
