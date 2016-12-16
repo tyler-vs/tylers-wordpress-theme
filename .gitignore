@@ -1,0 +1,31 @@
+# A demo of using a .gitignore file.
+# this file tells git not to add or even track files
+# that are specified in this gitignore file.
+# usage includes:
+# - prevent tracking of auto-generated or temporary files
+# - avoid including files with private information
+# 
+# generally a good idea to set this file up near the 
+# beginning of a project, to avoid accidently including
+# unwanted files/folders
+#
+# patterns include:
+# - any blank line or line starting with `#` are ignored
+# - standard glob patterns work
+# - start patterns with a `/` (forward slash) to avoid recursivity
+# - end patterns with a `/` ( forward slash) to specify a directory
+# - negate a pattern by starting it with an exclamation point `!`
+# 
+#
+# see: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-
+# to-the-Repository#Ignoring-Files for more information
+
+# ignore the docs directory
+docs/
+
+# ignore .DS_Store 
+.DS_Store
+
+# ignore todo list text file
+/todo.txt
+

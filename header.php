@@ -1,6 +1,8 @@
 <?php
 /**
  * header.php
+ *
+ * template partial
  */
  ?>
 <!doctype html>
@@ -35,26 +37,18 @@
                 */
                 $tvs_header_nav_menu_args = array(
                     'theme_location' => 'header-menu',
-                    'menu' => '',
                     'container' => 'nav',
                     'container_class' => 'site-nav',
-                    'container_id' => '',
                     // menu represents the ul element
                     'menu_class' => 'nav nav-pills',
                     // this will output a default that uses the name
                     // of the registered menu, which could be useful
                     // or more likely unnecessary.
                     'menu_id' => '',
-                    'echo' => true,
                     'fallback_cb' => 'wp_page_menu',
                     'before' => null,
                     'after' => null,
-                    'link_before' => '',
-                    'link_after' => '',
                     'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
-                    // 'items_wrap' => '%3$s',
-                    'depth' => 0,
-                    'walker' => ''
                 );
 
                 // WP function to display menu that
