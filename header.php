@@ -15,10 +15,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><?php bloginfo('title'); ?></title>
         <meta name="description" content="<?php bloginfo('description'); ?>">
-
-
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
@@ -59,12 +56,13 @@
                     'walker' => ''
                 );
 
+                // WP function to display menu that
+                // was defined with array of arguments
                 wp_nav_menu( $tvs_header_nav_menu_args );
 
              ?>
           </div>
         </div>
-
         <div class="jumbotron">
             <div class="container">
                 <div class="blog-header">
