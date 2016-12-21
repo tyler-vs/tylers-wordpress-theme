@@ -18,6 +18,7 @@
      * a RSS feed.
      */
     if ( ! is_active_sidebar( 'primary' ) ) {
+        // do_action('tvs_after_sidebar_inner');
         ?>
         <div class="sidebar-module">
             <h4>Info</h4>
@@ -44,6 +45,7 @@
             </ol>
         </div>
         <?php
+        do_action('tvs_after_sidebar_inner');
     } else {
         dynamic_sidebar( 'primary' );
     } ?>
