@@ -18,7 +18,7 @@
                   </div>
               </div>
           </div>
-        </footer> <!-- /footer -->
+        </footer> <!-- /.blog-footer -->
         <?php do_action( 'tvs_after_footer' ); ?>
 
         <?php wp_footer(); ?>

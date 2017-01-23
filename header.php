@@ -58,16 +58,25 @@
              ?>
           </div> <!-- /.container -->
         </div> <!-- /.blog-masthead -->
-        <div class="jumbotron">
-            <div class="container">
-                <div class="blog-header">
-                    <?php echo apply_filters( 'tvs_jumbotron_content', '
-                    <h1 class="blog-title">
-                        <a href="' . get_bloginfo('url') .'" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a>
-                    </h1>
-                    <p class="lead blog-description">' . get_bloginfo('description') . '</p>' ); ?>
-                </div>
+        <div class="container">
+            <div class="page-header blog-header">
+                <?php
+                    /**
+                     * tvs blog title filter
+                     */
+
+                    echo apply_filters( 'tvs_blog_title', '
+                <h1 class="blog-title">
+                    <a href="' . get_bloginfo('url') .'" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a>
+                </h1>');
+
+                    /**
+                     * tvs blog description filter
+                     */
+
+                    echo apply_filters( 'tvs_blog_description', '
+                <p class="lead blog-description">' . get_bloginfo('description') . '</p>' ); ?>
             </div>
-        </div>
+        </div> <!-- /.container -->
         <?php do_action( 'tvs_after_header' ); ?>
         <div class="container">

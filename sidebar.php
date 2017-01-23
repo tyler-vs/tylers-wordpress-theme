@@ -20,7 +20,7 @@
     if ( ! is_active_sidebar( 'primary' ) ) {
         // do_action('tvs_after_sidebar_inner');
         ?>
-        <div class="sidebar-module">
+        <div class="sidebar-module sidebar-module-inset">
             <h4>Info</h4>
             <p>This is a default sidebar, please go the <em>Customizer</em> or <em>Widgets Admin Panel</em> to add actual widgets.</p>
         </div>
