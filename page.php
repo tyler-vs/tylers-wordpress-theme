@@ -14,7 +14,7 @@
 
                 <?php
                   // get the default loop
-                  get_template_part( 'loop' );
+                  get_template_part( 'loop', 'page' );
                  ?>
 
             </div><!-- /.blog-main -->

@@ -191,4 +191,26 @@ include( get_stylesheet_uri() . 'inc/widgets.php' );
 /**
  * Customizer
  */
-include( get_stylesheet_uri() . 'inc/customizer.php' );
+// include( get_stylesheet_uri() . 'inc/customizer.php' );
+
+
+
+/*class Post {
+  function get_excerpt( $content ) {
+    if( strlen($content) < 250  ) {
+      return $content;
+    }
+    else {
+      $excerpt = substr( $content, 0, 250 );
+      return $excerpt . '...';
+    }
+  }
+
+  function the_excerpt( $content ) {
+    echo get_excerpt( $content );
+  }
+
+  function the_title( $title ) {
+    echo $title;
+  }
+}*/

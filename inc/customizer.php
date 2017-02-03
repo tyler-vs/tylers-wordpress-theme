@@ -30,6 +30,11 @@ if ( ! function_exists( 'tvs_customizer_register' ) ) {
 ' , 'tvs' )
         ) );
 
+        // footer copyright control
+        $wp_customize->add_control() {
+
+        }
+
     }
 }
 

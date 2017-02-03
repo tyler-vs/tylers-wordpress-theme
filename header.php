@@ -59,8 +59,11 @@
           </div> <!-- /.container -->
         </div> <!-- /.blog-masthead -->
         <div class="container">
-            <div class="page-header blog-header">
+            <div class="blog-header">
                 <?php
+
+                if ( is_front_page() || is_home() ) {
+
                     /**
                      * tvs blog title filter
                      */
@@ -75,8 +78,24 @@
                      */
 
                     echo apply_filters( 'tvs_blog_description', '
-                <p class="lead blog-description">' . get_bloginfo('description') . '</p>' ); ?>
-            </div>
+                <p class="lead blog-description">' . get_bloginfo('description') . '</p>' );
+
+                } else {
+
+                    ?>
+                    <header class="blog-post-header">
+                        <h2 class="blog-post-title">
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+                        </h2> <!-- /.blog-post-title -->
+                        <p class="blog-post-meta"><?php the_date(); ?> by <?php the_author_link(); ?></p>
+                    </header>
+                <?php
+
+                }
+
+
+                 ?>
+            </div> <!-- /.blog-header -->
         </div> <!-- /.container -->
         <?php do_action( 'tvs_after_header' ); ?>
         <div class="container">

@@ -171,3 +171,16 @@ h6, .h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+
+/*
+ * Jumbotron
+ */
+
+.jumbotron {
+  /*background: inherit;*/
+  background: -webkit-linear-gradient(red, yellow);
+  background: -o-linear-gradient(red, yellow);
+  background: -moz-linear-gradient(red, yellow);
+  background: linear-gradient(red, yellow);
+}
