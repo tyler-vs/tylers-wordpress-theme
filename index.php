@@ -12,12 +12,13 @@
 
             <div class="col-sm-8 blog-main">
 
-                <?php
-                    do_action('tvs_before_loop');
-                    // get the default loop
-                    get_template_part( 'loop' );
-                    do_action('tvs_after_loop');
-                 ?>
+            <?php
+                do_action('tvs_before_loop');
+                // get the default loop
+                get_template_part( 'loop' );
+
+                do_action('tvs_after_loop');
+             ?>
 
             </div><!-- /.blog-main -->
 

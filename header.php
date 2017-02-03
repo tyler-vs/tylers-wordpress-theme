@@ -27,9 +27,18 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <?php do_action( 'tvs_before_header' ); ?>
+        <?php do_action( 'tvs_before_masthead' ); ?>
         <div class="blog-masthead">
-          <div class="container">
+            <div class="container">
+            <?php
+            // show the site site as an h1 on the home page
+            // and as a p on other pages.
+            if ( is_front_page() || is_home() ) { ?>
+                <h1 class="blog-title"><a href="<?php bloginfo('url') ?>" title="<?php bloginfo( 'title' ); ?>"><?php bloginfo('title') ?></a></h1><!-- /.blog-title -->
+            <?php } else {   ?>
+                <p class="blog-title"><a href="<?php bloginfo('url') ?>" title="<?php bloginfo( 'title' ); ?>"><?php bloginfo('title') ?></a></p><!-- /.blog-title -->
+            <?php } ?>
+            <p class="lead blog-description"><?php bloginfo('description'); ?></p>
             <?php
                /**
                 * Displays a navigation menu
@@ -38,7 +47,7 @@
                 $tvs_header_nav_menu_args = array(
                     'theme_location' => 'header-menu',
                     'container' => 'nav',
-                    'container_class' => 'site-nav',
+                    'container_class' => 'blog-nav',
                     // menu represents the ul element
                     'menu_class' => 'nav nav-pills',
                     // this will output a default that uses the name
@@ -58,44 +67,5 @@
              ?>
           </div> <!-- /.container -->
         </div> <!-- /.blog-masthead -->
-        <div class="container">
-            <div class="blog-header">
-                <?php
-
-                if ( is_front_page() || is_home() ) {
-
-                    /**
-                     * tvs blog title filter
-                     */
-
-                    echo apply_filters( 'tvs_blog_title', '
-                <h1 class="blog-title">
-                    <a href="' . get_bloginfo('url') .'" title="' . get_bloginfo('title') . '">' . get_bloginfo('title') . '</a>
-                </h1>');
-
-                    /**
-                     * tvs blog description filter
-                     */
-
-                    echo apply_filters( 'tvs_blog_description', '
-                <p class="lead blog-description">' . get_bloginfo('description') . '</p>' );
-
-                } else {
-
-                    ?>
-                    <header class="blog-post-header">
-                        <h2 class="blog-post-title">
-                            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                        </h2> <!-- /.blog-post-title -->
-                        <p class="blog-post-meta"><?php the_date(); ?> by <?php the_author_link(); ?></p>
-                    </header>
-                <?php
-
-                }
-
-
-                 ?>
-            </div> <!-- /.blog-header -->
-        </div> <!-- /.container -->
-        <?php do_action( 'tvs_after_header' ); ?>
+        <?php do_action( 'tvs_after_masthead' ); ?>
         <div class="container">

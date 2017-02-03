@@ -31,7 +31,7 @@ if ( ! function_exists( 'tvs_customizer_register' ) ) {
         ) );
 
         // footer copyright control
-        $wp_customize->add_control() {
+        // $wp_customize->add_control() {
 
         }
 
