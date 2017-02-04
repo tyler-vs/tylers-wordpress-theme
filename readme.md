@@ -19,7 +19,13 @@ Explores the following concepts:
 
 ### Theme Filters
 
-- Default Markup
+- Action Hooks
+  + Container Before
+  + Container After
+- Filter Hooks
+  + __tvs_site_title_tag__ - modifies how the website's title tag is displayed.
+  + __tvs_blog_colophone_content__ - modifies the colophone, or site footer's HTML content.
+  + 
   + __tvs_main_container_class__ - default is __container__ class used by Bootstrap. Can override to __container-fluid__ or supply your own container class with additional CSS.
 - 404 Page
   + __tvs_404_page_title__    

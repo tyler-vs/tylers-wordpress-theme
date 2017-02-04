@@ -156,3 +156,61 @@ include( get_stylesheet_uri() . 'inc/widgets.php' );
  */
 // include( get_stylesheet_uri() . 'inc/customizer.php' );
 
+/**
+ * Theme Hooks
+ */
+
+/*
+Can't link to without breaking... do not know why???
+include( get_stylesheet_uri() . 'inc/action_hooks.php' );
+include( get_stylesheet_uri() . 'inc/filter_hooks.php' );*/
+
+// container hooks
+function tvs_container_before(){  do_action('tvs_container_before');  }
+function tvs_container_after(){  do_action('tvs_container_after');  }
+
+function tvs_page_heading() {
+
+    if ( is_home() || is_front_page() ) {
+    ?>
+    <div class="container">
+        <div class="row">
+            <div class="page-header">
+                <h2><?php echo apply_filters( 'tvs_page_heading_title', 'Lastest Articles' ); ?></h2>
+            </div><!-- /.page-header -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+    <?php
+    } // end if statement
+}
+add_action( 'tvs_container_before', 'tvs_page_heading' );
+
+
+// sample function for ammending a filter
+function change_page_heading_title( $c ) {
+    $new_content = $c . ':';
+    return $new_content;
+}
+add_filter( 'tvs_page_heading_title', 'change_page_heading_title' );
+
+
+
+if ( ! function_exists( 'tvs_footer_colophone' ) ) {
+    function tvs_footer_colophone() { ?>
+        <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>. Running on <a href="https://wordpress.org/" title="WordPress">WordPress <?php bloginfo('version'); ?></a>. &copy; Copyrighted <?php echo apply_filters( 'tvs_colophone_copyright_date', date( 'Y' ) ); ?></p>
+    <p><a href="#">Back to top</a></p>
+    <?php
+    }
+} // end if
+
+
+// demo of using filters to override the default filter
+function change_footer_date() {
+    $new_date = '2014 - ' . date( 'Y' ) . '.';
+    return $new_date;
+}
+
+add_filter( 'tvs_colophone_copyright_date', 'change_footer_date' );
+
+
+// tvs_footer_colophone() { do_action('tvs_footer_colophone'); }
