@@ -7,25 +7,20 @@
  */
  ?>
 <?php get_header(); ?>
+<div class="container">
+    <div class="row">
+        <main class="col-sm-8 blog-main">
 
-          <div class="row">
+        <?php
+            // do_action('tvs_before_loop');
+            // get the default loop
+            get_template_part( 'loop' );
 
-            <div class="col-sm-8 blog-main">
+            // do_action('tvs_after_loop');
+         ?>
 
-            <?php
-                do_action('tvs_before_loop');
-                // get the default loop
-                get_template_part( 'loop' );
-
-                do_action('tvs_after_loop');
-             ?>
-
-            </div><!-- /.blog-main -->
-
-            <?php get_sidebar(); ?>
-
-          </div><!-- /.row -->
-
-        </div><!-- /.container -->
-
+        </main><!-- /.blog-main -->
+        <?php get_sidebar(); ?>
+    </div><!-- /.row -->
+</div><!-- /.container -->
 <?php get_footer(); ?>

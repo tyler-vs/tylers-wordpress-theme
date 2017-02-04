@@ -6,9 +6,6 @@
  *
  */
 
-// $custom_text_domain = 'tvs';
-
-
 /**
  * setup theme defaults and WordPress supports
  */
@@ -18,7 +15,7 @@ if ( ! function_exists('theme_setup') ) {
      * Make theme available for translation.
      * Translations can be placed in the /languages/ directory.
      */
-    // load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
+    load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
 
     /**
      * Add default posts and comments RSS feed links to <head>.
@@ -121,16 +118,16 @@ if ( ! function_exists('tvs_add_theme_scripts') ) {
         );
 
         // main styles
-        wp_enqueue_style(
-            'main-css',
-            get_template_directory_uri() . '/css/main.css',
-            array(
-                'bootstrap-css',
-                'bootstrap-theme-css',
-                'blog-css',
-            ),
-            '1.0'
-        );
+        // wp_enqueue_style(
+        //     'main-css',
+        //     get_template_directory_uri() . '/css/main.css',
+        //     array(
+        //         'bootstrap-css',
+        //         'bootstrap-theme-css',
+        //         'blog-css',
+        //     ),
+        //     '1.0'
+        // );
 
 
         /**

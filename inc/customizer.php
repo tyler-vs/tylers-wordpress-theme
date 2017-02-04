@@ -8,7 +8,6 @@
  */
 
 
-
 // check to see if this function already exists or not
 if ( ! function_exists( 'tvs_customizer_register' ) ) {
 
