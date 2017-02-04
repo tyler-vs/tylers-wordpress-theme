@@ -12,17 +12,24 @@ Explores the following concepts:
 
 ## Installation
 
-1. Download the zip file and upload into the `themes` directory.
+1. Download the zip file and upload into the `themes` directory of a WordPress install.
 
-
-## Documentations
+## Documentation
 
 ### Theme Filters
 
 - Action Hooks
-  + Container Before
-  + Container After
+  + tvs_before_header
+  + tvs_header
+  + tvs_after_header
+  + tvs_before_container
+  + tvs_after_container
+  + tvs_before_sidebar
+  + tvs_after_sidebar
+  + tvs_before_footer
+  + tvs_after_footer
 - Filter Hooks
+  + __tvs_blog_header_classes__ - modifies the default class applied to the blog-header.
   + __tvs_site_title_tag__ - modifies how the website's title tag is displayed.
   + __tvs_blog_colophone_content__ - modifies the colophone, or site footer's HTML content.
   + 
@@ -30,7 +37,11 @@ Explores the following concepts:
 - 404 Page
   + __tvs_404_page_title__    
   + 
-- 
+
+
+## TODO
+
+- Favicon support
 
 
 ## Colophon

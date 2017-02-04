@@ -160,12 +160,123 @@ include( get_stylesheet_uri() . 'inc/widgets.php' );
  * Theme Hooks
  */
 
-/*
-Can't link to without breaking... do not know why???
-include( get_stylesheet_uri() . 'inc/action_hooks.php' );
-include( get_stylesheet_uri() . 'inc/filter_hooks.php' );*/
 
-// container hooks
+/*html head*/
+
+function tvs_singlular_description_meta( $c ) {
+    if ( is_singular() ) {
+        // get the page description and output it here...
+        // $new_content = ;
+        return $c;
+    }
+}
+add_filter( 'tvs_description_meta', 'tvs_singlular_description_meta' );
+
+
+/**
+ * Header Hooks
+ */
+
+// before header
+if ( ! function_exists( 'tvs_before_header' ) ) {
+    function tvs_before_header(){ do_action('tvs_before_header'); }
+}
+
+// header
+function tvs_header() { ?>
+<div class="container">
+    <div class="row">
+        <div class="<?php echo apply_filters( 'tvs_blog_header_classes', esc_attr( 'blog-header col-sm-8' ) ); ?>">
+        <?php
+        if ( is_front_page() || is_home() ) { ?>
+            <h1 class="blog-title h3"><a href="<?php bloginfo('url') ?>" title="<?php echo esc_attr( apply_filters('tvs_blog_header_title', ucwords( get_bloginfo('title') ) ) ); ?>"><?php echo apply_filters('tvs_blog_header_title', ucwords( get_bloginfo('title') ) ); ?></a></h1><!-- /.blog-title -->
+        <?php } else {   ?>
+            <p class="blog-title h3"><a href="<?php bloginfo('url') ?>" title="<?php echo esc_attr( apply_filters('tvs_blog_header_title', ucwords( get_bloginfo('title') ) ) ); ?>"><?php echo apply_filters('tvs_blog_header_title', ucwords( get_bloginfo('title') ) ); ?></a></p><!-- /.blog-title -->
+        <?php } ?>
+        <p class="lead blog-description"><?php bloginfo('description'); ?></p>
+        </div><!-- /.blog-header -->
+        <?php tvs_blog_header_right_side(); ?>
+    </div><!-- /.row -->
+</div><!-- /.container -->
+<?php
+}
+
+if ( ! function_exists( 'tvs_blog_header_right_side();' ) ) {
+/**
+ * [tvs_blog_header_right_side description]
+ * @return [type] [description]
+ */
+function tvs_blog_header_right_side() { ?>
+    <aside class="blog-header-aside col-sm-4">
+        <?php if ( ! is_active_sidebar( 'header-sidebar' ) ): ?>
+            <p>You can add a widget here!</p>
+        <?php else:
+            dynamic_sidebar( 'header-sidebar' );
+              endif; ?>
+    </aside>
+<?php
+}
+}
+
+if ( ! function_exists('tvs_primary_nav') ) {
+/**
+ * [tvs_primary_nav description]
+ * @return [type] [description]
+ */
+function tvs_primary_nav() { ?>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="#"></a> -->
+        </div><!-- /.navbar-header -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <?php
+           /**
+            * Displays a navigation menu
+            * @param array $args Arguments
+            */
+            $tvs_header_nav_menu_args = array(
+                'theme_location' => 'header-menu',
+                'container' => null,
+                'menu_class' => 'nav navbar-nav',
+                'menu_id' => '',
+                'fallback_cb' => 'wp_page_menu',
+                'before' => null,
+                'after' => null,
+                'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
+            );
+
+            // WP function to display menu that
+            // was defined with array of arguments
+            wp_nav_menu( $tvs_header_nav_menu_args );
+         ?>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-->
+</nav><!-- /.navbar navbar-default -->
+<?php
+}
+}
+
+// after header
+
+if (! function_exists( 'tvs_after_header' ) ) {
+    function tvs_after_header(){ do_action('tvs_after_header'); }
+}
+
+
+
+/**
+ * container hooks
+ */
 function tvs_container_before(){  do_action('tvs_container_before');  }
 function tvs_container_after(){  do_action('tvs_container_after');  }
 
@@ -194,6 +305,12 @@ function change_page_heading_title( $c ) {
 add_filter( 'tvs_page_heading_title', 'change_page_heading_title' );
 
 
+/**
+ * Footer Hooks
+ */
+
+function tvs_before_footer(){ do_action( 'tvs_before_footer' ); }
+function tvs_after_footer(){ do_action( 'tvs_after_footer' ); }
 
 if ( ! function_exists( 'tvs_footer_colophone' ) ) {
     function tvs_footer_colophone() { ?>
@@ -211,6 +328,3 @@ function change_footer_date() {
 }
 
 add_filter( 'tvs_colophone_copyright_date', 'change_footer_date' );
-
-
-// tvs_footer_colophone() { do_action('tvs_footer_colophone'); }

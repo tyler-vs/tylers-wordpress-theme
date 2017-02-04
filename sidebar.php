@@ -18,7 +18,6 @@
      * a RSS feed.
      */
     if ( ! is_active_sidebar( 'primary' ) ) {
-        // do_action('tvs_after_sidebar_inner');
         ?>
         <div class="sidebar-module sidebar-module-inset">
             <h4>Info</h4>

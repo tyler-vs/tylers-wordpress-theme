@@ -6,6 +6,8 @@
  * theme, and may not work with other themes.
  */
 
+if ( ! function_exists( 'tvs_widgets_init' ) ) {
+
 /**
  * tvs_widgets_init
  *
@@ -15,23 +17,37 @@
  *
  * see: https://developer.wordpress.org/themes/functionality/sidebars/
  */
-if ( ! function_exists( 'tvs_widgets_init' ) ) {
 
-    $primary_sidebar_args = array(
-        'id'            => 'primary',
-        'name'          => __( 'Primary Sidebar' ),
-        'description'   => 'Primary sidebar',
-        'class'         => 'primary-sidebar',
-        'before_widget' => '<div id="%1" class="sidebar-module %2">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h4>',
-        'after_title'   => '</h4>'
-    );
+$primary_sidebar_args = array(
+    'id'            => 'primary',
+    'name'          => __( 'Primary Sidebar' ),
+    'description'   => 'Primary sidebar',
+    'class'         => 'primary-sidebar',
+    'before_widget' => '<div id="%1" class="sidebar-module %2">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>'
+);
 
-    register_sidebar( $primary_sidebar_args );
-}
+register_sidebar( $primary_sidebar_args );
 
 
+$tvs_header_sidebar = array(
+    'id'            => 'header-sidebar',
+    'name'          => __( 'Header Sidebar' ),
+    'description'   => 'Header sidebar',
+    'class'         => 'header-sidebar',
+    'before_widget' => '<div id="%1" class="sidebar-module %2">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4>',
+    'after_title'   => '</h4>'
+);
+
+register_sidebar( $tvs_header_sidebar );
+} // end function exists check
+
+
+if ( ! function_exists( 'tvs_register_nav_menus' ) ) {
 /**
  * register navigation menus
  *
@@ -48,11 +64,10 @@ if ( ! function_exists( 'tvs_widgets_init' ) ) {
  * creating a widgetized area/sidebar.
  *
  */
-if ( ! function_exists( 'tvs_register_nav_menus' ) ) {
-    register_nav_menus(
-        array(
-            'header-menu' => __( 'Header Menu', 'tvs' ),
-            'footer-menu' => __( 'Footer Menu', 'tvs' )
-        )
-    );
+register_nav_menus(
+    array(
+        'header-menu' => __( 'Header Menu', 'tvs' ),
+        'footer-menu' => __( 'Footer Menu', 'tvs' )
+    )
+);
 }

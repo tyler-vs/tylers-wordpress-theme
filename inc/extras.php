@@ -1,22 +1,10 @@
 <?php
 /**
- * extras
+ * Custom functions that act independently of the theme templates
  *
- * contains extra codes, theme functionalities
+ * Eventually, some of the functionality here could be replaced by core features.
  *
  */
-
-/**
- * add viewport meta
- */
-if ( ! function_exists('add_viewport_meta') ) {
-    function add_viewport_meta() { ?>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-<?php
-    }
-}
-
 
 /**
  * Remove profanities (demo of a WP fitler hook)
@@ -40,20 +28,3 @@ function tvs_profanity_filter( $content ) {
 
     return $content;
 }
-
-/*if ( ! function_exists( 'tvs_add_post_nav' ) ) {
-    function tvs_add_post_nav() {
-        if ( is_home() || is_front_page() ) {
-        ?>
-        <nav class="container">
-            <ul class="pager">
-                <li><?php next_posts_link( 'Older posts' ); ?></li>
-                <li><?php previous_posts_link( 'Newer posts' ); ?></li>
-            </ul>
-        </nav>
-        <?php
-        } // end is_singular condition
-    }
-}
-add_action( 'tvs_after_loop', 'tvs_add_post_nav' );*/
-
