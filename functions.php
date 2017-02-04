@@ -9,37 +9,13 @@
 /**
  * setup theme defaults and WordPress supports
  */
-if ( ! function_exists('theme_setup') ) {
-    function theme_setup() {
-    /**
-     * Make theme available for translation.
-     * Translations can be placed in the /languages/ directory.
-     */
-    load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
+if ( ! function_exists('tvs_theme_setup') ) {
+    function tvs_theme_setup() {
 
     /**
      * Add default posts and comments RSS feed links to <head>.
      */
     add_theme_support( 'automatic-feed-links' );
-
-    /**
-     * Enable support for post thumbnails and featured images.
-     */
-    add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
-
-
-    /* HTML5 */
-    add_theme_support( 'html5',
-        array(
-            'search-form',
-            'caption'
-        )
-    );
-
-    /**
-     *
-     */
-    // add_theme_support( 'title-tag' );
 
     /**
      * Register two custom navigation menus.
@@ -56,13 +32,6 @@ if ( ! function_exists('theme_setup') ) {
      */
     add_theme_support( 'post-formats', array ( 'aside', 'gallery', 'quote', 'image', 'video' ) );
 
-    /*add_theme_support( 'html5', array(
-        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
-    ) );*/
-
-    // custom template tags
-    // require( get_template_directory() . 'inc/template-tags.php' );
-
     /**
      * Enqueue theme styles and scripts.
      */
@@ -75,7 +44,7 @@ if ( ! function_exists('theme_setup') ) {
 
     }
 }
-add_action( 'after_setup_theme', 'theme_setup' );
+add_action( 'after_setup_theme', 'tvs_theme_setup' );
 
 
 /**
@@ -86,9 +55,6 @@ if ( ! function_exists('tvs_add_theme_scripts') ) {
 
         // theme's style.css ( required )
         wp_enqueue_style( 'style-css', get_stylesheet_uri() );
-
-        // google fonts
-        // wp_enqueue_style( 'open-sans-css', '//fonts.googleapis.com/css?family=Open+Sans:400,400italic,300,600,700' );
 
         // bootstrap css
         wp_enqueue_style(
@@ -190,8 +156,3 @@ include( get_stylesheet_uri() . 'inc/widgets.php' );
  */
 // include( get_stylesheet_uri() . 'inc/customizer.php' );
 
-
-/**
- * OOP Demo for Chirp
- */
-// include( get_stylesheet_uri() . 'classes/chirp.php' );

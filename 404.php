@@ -7,20 +7,20 @@
  */
  ?>
 <?php get_header(); ?>
+<div class="<?php apply_filter( 'tvs_main_container_class', 'container' ); ?>">
+  <div class="row">
 
-          <div class="row">
+    <main class="col-sm-8 blog-main">
 
-            <div class="col-sm-8 blog-main">
+        <h1><?php apply_filters( 'tvs_404_page_title', 'Page Not Found' );  ?></h1>
+        <p>Sorry, but the page you were trying to view does not exist.</p>
 
-                <h2>Page Not Found</h2>
-                <p>Sorry, but the page you were trying to view does not exist.</p>
+    </main><!-- /.blog-main -->
 
-            </div><!-- /.blog-main -->
+    <?php get_sidebar(); ?>
 
-            <?php get_sidebar(); ?>
+  </div><!-- /.row -->
 
-          </div><!-- /.row -->
-
-        </div><!-- /.container -->
+</div><!-- /.container -->
 
 <?php get_footer(); ?>
