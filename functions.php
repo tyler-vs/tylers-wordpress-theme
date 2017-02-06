@@ -309,8 +309,12 @@ add_filter( 'tvs_page_heading_title', 'change_page_heading_title' );
  * Footer Hooks
  */
 
-function tvs_before_footer(){ do_action( 'tvs_before_footer' ); }
-function tvs_after_footer(){ do_action( 'tvs_after_footer' ); }
+if ( ! function_exists( 'tvs_before_footer' ) ) {
+    function tvs_before_footer(){ do_action( 'tvs_before_footer' ); }
+}
+if ( ! function_exists( 'tvs_after_footer' ) ) {
+    function tvs_after_footer(){ do_action( 'tvs_after_footer' ); }
+}
 
 if ( ! function_exists( 'tvs_footer_colophone' ) ) {
     function tvs_footer_colophone() { ?>
